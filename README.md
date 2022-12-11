@@ -23,7 +23,7 @@ Simulation of  robot
 
 ## Demonstration Video
 
-## Refrences
+## Reference
 > [1] A lightweight implementation of the Social Force Model for Social Local Navigation. ([Repository Link](https://github.com/robotics-upo/lightsfm))
 
 > [2] A plugin for simulation of human pedestrians in ROS Gazebo. ([Repository Link](https://github.com/robotics-upo/gazebo_sfm_plugin))
