@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+    <!-- send urdf to param server -->
+    <param name="robot_description" command="cat $(find navigation)/urdf/faby.urdf" />
+
+    <!-- Send robot joint values-->
+    <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
+        <param name="use_gui" value="false" />
+    </node>
+
+    <!-- Send robot states to tf -->
+    <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="false" output="screen" />
+
+    <arg name="x" default="0" />
+    <arg name="y" default="0" />
+    <arg name="z" default="0" />
+    <arg name="roll" default="0" />
+    <arg name="pitch" default="0" />
+    <arg name="yaw" default="0" />
+
+    <!-- <arg name="lab" value="$(find navigation)/worlds/fablab_arena.world"/> -->
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="paused" value="false" />
+        <arg name="use_sim_time" value="true" />
+        <arg name="debug" value="true" />
+        <arg name="gui" value="true" />
+        <!-- <arg name="world_name" value="$(arg lab)"/> -->
+    </include>
+
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
+        args="-param robot_description -urdf -model Faby
+              -x $(arg x) -y $(arg y) -z $(arg z)
+              -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" />
+
+</launch>
