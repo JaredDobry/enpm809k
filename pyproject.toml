@@ -18,6 +18,7 @@ pandas = "^1.5.2"
 scikit-image = "^0.19.3"
 matplotlib = "^3.6.2"
 tqdm = "^4.64.1"
+keras = "^2.11.0"
 
 [tool.poetry.group.dev.dependencies]
 black = {version = "^22.10.0", allow-prereleases = true}

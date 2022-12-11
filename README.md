@@ -1,5 +1,5 @@
 Requirements:
-Python 3.10+
+Python 3.8 - 3.10
 Python poetry (https://python-poetry.org/docs/master/ to install)
 
 Install process:
