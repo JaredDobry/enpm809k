@@ -2,14 +2,14 @@
 from json import load, dump
 from pathlib import Path
 
-data_dir = "/home/jdobry/enpm809k/pose_data"
+data_dir = "E:/Code/enpm809k/pose_data"
 p = (Path(data_dir) / "annotations.json").resolve()
 annotations = load(p.open())
 
 # Load annotated images in the following categories
-ALLOW_ALL = True
+ALLOW_ALL = False
 ALLOWED_CATEGORIES = ["bicycling", "running", "walking"]
-ALLOWED_JOINTS = [1, 4, 9, 12, 13] # r knee, l knee, head, r shoulder, l shoulder
+ALLOWED_JOINTS = [2, 3, 9, 12, 13] # r hip, l hip, head, r shoulder, l shoulder
 
 
 valid_imgs = []
